@@ -33,5 +33,5 @@ jobs:
 
       - checkout
       - run: bundle install --path vendor/bundle
-      - run: bundle exec rake db:migrate
+      - run: bin/rails db:{create,migrate} --trace
       - run: bundle exec rspec
