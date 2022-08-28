@@ -4,7 +4,6 @@ class CityFacade
     data = {  name: nil,
               full_name: nil,
               summary: {  "continent" => nil,
-                          "coordinates" => {},
                           "summary" => nil
                         },
               scores: { "housing" => 0.0,
@@ -41,8 +40,7 @@ class CityFacade
                               "public_transport" => 0.0,
                               "lunch_meal" => 0.0,
                               "taxi" => 0.0,
-                              "restaurant_price_index" => 0.0,
-                              "sales_tax" => 0.0
+                              "restaurant_price_index" => 0.0
                           },
                           "culture" => {
                               "art_galleries" => 0,
@@ -69,7 +67,13 @@ class CityFacade
     end
 
     city_names.each do |city|
-      city = city.name
+
+      city = city.name.gsub(" ", "-").delete(",").delete(".")
+
+      if city == "galway"
+        city = "gaillimh"
+      end
+
       city_data = TeleportService.get_city_data(city)
       city_scores = TeleportService.get_city_score_data(city)
       city_images = TeleportService.get_city_image_data(city)[:photos]
@@ -79,18 +83,17 @@ class CityFacade
       data[:name] = city.titleize
       data[:full_name] = city_data[:full_name]
       data[:summary]["continent"] = city_data[:continent]
-
-      data[:summary]["coordinates"]["east"] = city_data[:bounding_box][:latlon][:east]
-      data[:summary]["coordinates"]["north"] = city_data[:bounding_box][:latlon][:north]
-      data[:summary]["coordinates"]["south"] = city_data[:bounding_box][:latlon][:south]
-      data[:summary]["coordinates"]["west"] = city_data[:bounding_box][:latlon][:west]
       data[:summary]["summary"] = city_scores[:summary]
 
 ## Get Scores
       score_list = []
+      if city_scores[:categories] == nil
+        require "pry"; binding.pry
+      else
         city_scores[:categories].each do |score|
           score_list << score[:score_out_of_10].round(2)
         end
+      end
       data[:scores].each do |k,v|
         data[:scores][k] = score_list.shift
       end
@@ -112,7 +115,7 @@ class CityFacade
           data[:details]["average_costs"][kv[0]] = cost_list[index-1]
         end
       end
-      data[:details]["average_costs"]["sales_tax"] = city_details[18][:data][3][:percent_value]
+
       culture_list = []
         city_details[4][:data][1..].each do |culture|
           culture_list << culture[:int_value]
@@ -131,7 +134,6 @@ class CityFacade
         data[:details]["housing"][k] = apartment_prices.shift
       end
       City.create(data)
-      require "pry"; binding.pry
     end
   end
 end
