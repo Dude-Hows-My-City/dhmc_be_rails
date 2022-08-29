@@ -90,6 +90,7 @@ class CityFacade
       city_scores[:categories].each do |score|
         score_list << score[:score_out_of_10].round(2)
       end
+
       data[:scores].each do |k,v|
         data[:scores][k] = score_list.shift
       end
