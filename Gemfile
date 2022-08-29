@@ -24,7 +24,6 @@ group :development, :test do
   gem 'capybara'
   gem 'simplecov'
   gem 'shoulda-matchers'
-  gem 'figaro'
   gem 'factory_bot_rails'
   gem 'faker'
 end
