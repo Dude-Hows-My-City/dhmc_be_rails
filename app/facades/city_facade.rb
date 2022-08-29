@@ -87,12 +87,9 @@ class CityFacade
 
 ## Get Scores
       score_list = []
-      if city_scores[:categories] == nil
-        require "pry"; binding.pry
-      else
-        city_scores[:categories].each do |score|
-          score_list << score[:score_out_of_10].round(2)
-        end
+      city_scores[:categories].each do |score|
+        score_list << score[:score_out_of_10].round(2)
+      end
       end
       data[:scores].each do |k,v|
         data[:scores][k] = score_list.shift
