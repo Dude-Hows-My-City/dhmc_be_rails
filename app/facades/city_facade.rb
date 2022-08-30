@@ -58,7 +58,60 @@ class CityFacade
                               "medium_apartment" => 0.0,
                               "small_apartment" => 0.0
                           }
-                        }
+                        },
+              :salaries => {  "account_manager" => 0.0,
+                              "accountant" => 0.0,
+                              "administrative_assitant" => 0.0,
+                              "architect" => 0.0,
+                              "attorney" => 0.0,
+                              "business_analyst" => 0.0,
+                              "business_development" => 0.0,
+                              "c_level_executive" => 0.0,
+                              "cashier" => 0.0,
+                              "chef" => 0.0,
+                              "chemical_engineer" => 0.0,
+                              "civil_engineer" => 0.0,
+                              "content_marketing" => 0.0,
+                              "copywriter" => 0.0,
+                              "customer_support" => 0.0,
+                              "data_analyst" => 0.0,
+                              "data_scientist" => 0.0,
+                              "dentist" => 0.0,
+                              "electrical_engineer" => 0.0,
+                              "executive_assistant" => 0.0,
+                              "fashion_designer" => 0.0,
+                              "finance_manager" => 0.0,
+                              "financial_analyst" => 0.0,
+                              "graphic_designer" => 0.0,
+                              "hardware_engineer" => 0.0,
+                              "human_resources_manager" => 0.0,
+                              "it_manager" => 0.0,
+                              "industrial_designer" => 0.0,
+                              "interior_designer" => 0.0,
+                              "lecturer" => 0.0,
+                              "marketing_manager" => 0.0,
+                              "mechanical_engineer" => 0.0,
+                              "mobile_developer" => 0.0,
+                              "nurse" => 0.0,
+                              "office_manager" => 0.0,
+                              "operations_manager" => 0.0,
+                              "pharmacist" => 0.0,
+                              "physician" => 0.0,
+                              "postdoctoral_researcher" => 0.0,
+                              "product_manager" => 0.0,
+                              "project_manager" => 0.0,
+                              "qa_engineer" => 0.0,
+                              "receptionist" => 0.0,
+                              "research_scientist" => 0.0,
+                              "sales_manager" => 0.0,
+                              "software_engineer" => 0.0,
+                              "systems_administrator" => 0.0,
+                              "teacher" => 0.0,
+                              "ux_designer" => 0.0,
+                              "waiter" => 0.0,
+                              "web_designer" => 0.0,
+                              "web_developer" => 0.0
+                            }
             }
 ## Get list of city names from which to pull data
     city_names = []
@@ -69,7 +122,8 @@ class CityFacade
     city_names.each do |city|
 
       city = city.name.gsub(" ", "-").delete(",").delete(".")
-
+## Just the city of Galway, Ireland has a different name within the the URI
+      data[:name] = city.titleize
       if city == "galway"
         city = "gaillimh"
       end
@@ -78,9 +132,9 @@ class CityFacade
       city_scores = TeleportService.get_city_score_data(city)
       city_images = TeleportService.get_city_image_data(city)[:photos]
       city_details = TeleportService.get_city_details_data(city)[:categories]
+      city_salaries = TeleportService.get_city_salary_data(city)[:salaries]
 
 ## Get Basic Info and Summary
-      data[:name] = city.titleize
       data[:full_name] = city_data[:full_name]
       data[:summary]["continent"] = city_data[:continent]
       data[:summary]["summary"] = city_scores[:summary]
@@ -130,6 +184,16 @@ class CityFacade
       data[:details]["housing"].each do |k,v|
         data[:details]["housing"][k] = apartment_prices.shift
       end
+
+## Get Salaries
+      salaries_list = []
+        city_salaries.each do |job|
+          salaries_list << job[:salary_percentiles][:percentile_50].round(2)
+        end
+      data[:salaries].each do |k,v|
+        data[:salaries][k] = salaries_list.shift
+      end
+      
       City.create(data)
     end
   end
