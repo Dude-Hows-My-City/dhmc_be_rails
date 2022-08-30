@@ -7,5 +7,6 @@ RSpec.describe City do
     it { should validate_presence_of(:summary) }
     it { should validate_presence_of(:scores) }
     it { should validate_presence_of(:details) }
+    it { should validate_presence_of(:salaries) }
   end
 end
