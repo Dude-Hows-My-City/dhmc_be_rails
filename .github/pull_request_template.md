@@ -1,16 +1,7 @@
-### What does this PR do?
+### Why is this PR necessary?
 
 
-### All tests passing?
-- [ ] Yes
-- [ ] No
+## What does this PR do?
 
-### SimpleCov 100%?
-- [ ] Yes
-- [ ] No
-- If No, what's missing:
 
-### Has this been tested on LOCALHOST?
-- [ ] Yes
-- [ ] No
-- Did something not work? If so, what was it?
+## Which User Story does this link to?
