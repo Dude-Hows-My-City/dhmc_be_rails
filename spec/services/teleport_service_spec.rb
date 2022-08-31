@@ -53,4 +53,15 @@ RSpec.describe TeleportService do
     expect(response[:photos][0]).to have_key :image
     expect(response[:photos][0][:image].keys).to eq([:mobile, :web])
   end
+
+  it "sends response data, city salaries" do
+    response = TeleportService.get_city_salary_data("paris")
+
+    expect(response).to be_a Hash
+    expect(response).to have_key :salaries
+    expect(response[:salaries]).to be_a Array
+    expect(response[:salaries][0].keys).to eq([:job, :salary_percentiles])
+    expect(response[:salaries][0][:job]).to have_key :title
+    expect(response[:salaries][0][:salary_percentiles].keys).to eq([:percentile_25, :percentile_50, :percentile_75])
+  end
 end

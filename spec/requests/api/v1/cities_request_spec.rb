@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Cities API' do
+RSpec.describe 'Cities Request Endpoint' do
     it "returns a list of cities" do
         create_list(:city, 5)
         get '/api/v1/cities'

@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :cities, only: [:index, :show]
+      resources :favorites, only: [:create]
+
+      get '/favorites/:id', to: 'favorites#index'
+      delete '/favorites', to: 'favorites#destroy'
     end
   end
 

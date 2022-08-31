@@ -28,4 +28,12 @@ class TeleportService
     response = conn.get("#{city}/details")
     JSON.parse(response.body, symbolize_names: true)
   end
+
+  def self.get_city_salary_data(city)
+    
+    binding.pry
+    
+    response = conn.get("#{city}/salaries")
+    JSON.parse(response.body, symbolize_names: true)
+  end
 end
