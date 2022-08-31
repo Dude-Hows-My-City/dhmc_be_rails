@@ -59,6 +59,5 @@ RSpec.describe 'Favorites Request Endpoint' do
         expect(response).to  be_successful
         expect(response).to  have_http_status(204)
         expect(user.favorites.count).to eq(2)
-        
     end
 end
