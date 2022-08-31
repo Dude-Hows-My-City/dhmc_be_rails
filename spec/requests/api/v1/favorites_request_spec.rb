@@ -40,4 +40,25 @@ RSpec.describe 'Favorites Request Endpoint' do
         expect(response_body[:data].second[:id]).to eq(city_3.id.to_s)
         expect(response_body[:data].third[:id]).to eq(city_5.id.to_s)
     end
+
+    it "can delete a users favorite city" do
+        user = User.create!(username: 'Tony')
+        city_list = create_list(:city, 5)
+        city_1 = city_list.first
+        city_3 = city_list.third
+        city_5 = city_list.fifth
+        
+        Favorite.create(user_id: user.id, city_id: city_1.id)
+        Favorite.create(user_id: user.id, city_id: city_3.id)
+        Favorite.create(user_id: user.id, city_id: city_5.id)
+
+        expect(user.favorites.count).to eq(3)
+        
+        delete "/api/v1/favorites", headers: headers, params: { user_id: user.id, city_id: city_3.id}
+        
+        expect(response).to  be_successful
+        expect(response).to  have_http_status(204)
+        expect(user.favorites.count).to eq(2)
+        
+    end
 end
