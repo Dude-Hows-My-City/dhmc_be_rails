@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2022_08_30_201624) do
 
   # These are extensions that must be enabled in order to support this database
@@ -26,6 +27,15 @@ ActiveRecord::Schema.define(version: 2022_08_30_201624) do
     t.json "salaries"
   end
 
+  create_table "favorites", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "city_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["city_id"], name: "index_favorites_on_city_id"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
+  end
+
   create_table "searches", force: :cascade do |t|
     t.string "query"
     t.bigint "user_id"
@@ -36,5 +46,7 @@ ActiveRecord::Schema.define(version: 2022_08_30_201624) do
     t.string "username"
   end
 
+  add_foreign_key "favorites", "cities"
+  add_foreign_key "favorites", "users"
   add_foreign_key "searches", "users"
 end
