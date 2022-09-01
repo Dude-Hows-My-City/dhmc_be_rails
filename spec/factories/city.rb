@@ -5,5 +5,6 @@ FactoryBot.define do
     summary {Faker::Number.decimal(l_digits: 2)}
     scores {Faker::Number.between(from: 1, to: 10)}
     details {Faker::Number.between(from: 1, to: 10)}
+    salaries {Faker::Number.between(from: 1, to: 10)}
   end
 end
