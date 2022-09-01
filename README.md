@@ -1,24 +1,46 @@
-# README
+# Dude How's My City
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[![CircleCI](https://circleci.com/gh/circleci/dhmc_be_rails.svg?style=svg)](https://github.com/Dude-Hows-My-City/dhmc_be_rails)
 
-Things you may want to cover:
+# API Usage
+- Base URL: 'https://dashboard.heroku.com/apps/dude-hows-my-city-be'
 
-* Ruby version
+---
 
-* System dependencies
+- Available Endpoints: 
+      - [User Endpoints](#USER)
+      - [City Endpoints](#CITY)
+      - [Favorite Endpoints](#FAVORITE)
 
-* Configuration
+---
 
-* Database creation
+# User
 
-* Database initialization
+**Create User**
 
-* How to run the test suite
+- This endpoint consumes data sent from the front end to create a user.
 
-* Services (job queues, cache servers, search engines, etc.)
+``` ruby
+[POST] /api/v1/users
+```
 
-* Deployment instructions
+``` json
+{
+  "data": {
+    "id": "3",
+    "type": "user",
+    "attributes": {
+      "username": "Hotdog King " 
+    }
+  }
+}
+```
 
-* ...
+---
+
+
+
+Summary of the project, backend resources and technologies, link to Turing project expectations
+List all endpoints and show example json bodies
+Link all repos and hosted apps
+List contributors with Linkdin and Github
