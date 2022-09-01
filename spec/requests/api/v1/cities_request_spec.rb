@@ -39,6 +39,19 @@ RSpec.describe 'Cities Request Endpoint' do
             expect(city[:attributes]).to have_key(:scores)
             expect(city[:attributes]).to have_key(:details)
         end
+
+        it "saves a city queue in search table when searched" do
+            expect(Search.all).to eq([])
+            expect(Search.all.count).to eq(0)
+
+            user = User.create!(username: 'Tony')
+            city_list = create_list(:city, 2)
+            city = city_list.first
+            
+            get "/api/v1/cities/#{city.id}?user=#{user.id}"
+            
+            expect(Search.all.count).to  eq(1)
+        end
     end
     
     describe "sad path" do
