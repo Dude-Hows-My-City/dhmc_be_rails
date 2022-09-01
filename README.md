@@ -20,6 +20,10 @@
 
 - This endpoint consumes data sent from the front end to create a user.
 
+``` ruby
+[POST] /api/v1/users
+```
+
 Example:
 
 ``` ruby
@@ -47,6 +51,10 @@ Response:
 **Displays All Cities** 
 
 - This endpoint will return all cities from the database.
+
+``` ruby
+[GET] /api/v1/cities
+```
 
 Example:
 
@@ -189,10 +197,14 @@ Response:
 
 -This enpoind will return a select city. 
 
+``` ruby
+[GET] /api/v1/cities/:id
+```
+
 Example: 
 
 ``` ruby
-[GET] /api/v1/cities/:id
+[GET] /api/v1/cities/:89
 ```
 
 Response:
@@ -325,9 +337,38 @@ Response:
 
 ---
 
+# Favorites
 
+**Create Favorite**
 
+- This endpoint creates a favorite for a user.
 
+``` ruby
+[POST] /api/v1/users/:id/favorites
+
+Required PARAMS:
+  - favorites_params = ({
+                          user_id: user.id,
+                          city_id: city.id
+                        })
+```
+
+Example:
+
+``` ruby
+[POST] /api/v1/users/:1/favorites
+
+- PARAMS
+  - JSON.generate(favorite: favorites_params)        
+```
+
+Response: 
+
+```json
+
+```
+
+---
 
 
 
