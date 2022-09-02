@@ -344,7 +344,7 @@ Response:
 - This endpoint creates a favorite for a user.
 
 ``` ruby
-[POST] /api/v1/users/:id/favorites
+[POST] /api/v1/favorites
 
 Required PARAMS:
   - favorites_params = ({
@@ -356,7 +356,7 @@ Required PARAMS:
 Example:
 
 ``` ruby
-[POST] /api/v1/users/:1/favorites
+[POST] /api/v1/favorites
 
 - PARAMS
   - JSON.generate(favorite: favorites_params)        
@@ -370,8 +370,56 @@ Response:
 
 ---
 
+**Return Favorite**
 
+- This endpoint will return a favorite for a user.
 
+``` ruby
+[GET] /api/v1/favorites/:user_id
+
+```
+
+Example:
+
+``` ruby
+[GET] /api/v1/favorites/33
+        
+```
+
+Response: 
+
+```json
+
+```
+
+---
+
+**Delete Favorite**
+
+- This endpoint deletes a favorite for a user.
+
+``` ruby
+[DELETE] /api/v1/favorites
+
+Required PARAMS:
+  - { user_id: user.id, city_id: city_3.id}
+```
+
+Example:
+
+``` ruby
+[DELETE] /api/v1/favorites
+
+- PARAMS
+  - { user_id: 13, city_id: 57}        
+```
+
+Response: 
+
+```json
+
+```
+---
 
 Summary of the project, backend resources and technologies, link to Turing project expectations
 List all endpoints and show example json bodies
