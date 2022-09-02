@@ -1,6 +1,7 @@
 # Dude How's My City
 
-[![CircleCI](https://circleci.com/gh/circleci/dhmc_be_rails.svg?style=svg)](https://github.com/Dude-Hows-My-City/dhmc_be_rails)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/Dude-Hows-My-City/dhmc_be_rails/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/Dude-Hows-My-City/dhmc_be_rails/tree/main) 
+
 
 # API Usage
 - Base URL: 'https://dashboard.heroku.com/apps/dude-hows-my-city-be'
