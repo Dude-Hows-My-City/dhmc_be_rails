@@ -347,8 +347,8 @@ class CityFacade
         city_salaries.each do |job|
           salaries_list << job[:salary_percentiles][:percentile_50].round(2)
         end
-      data[:salaries].each do |k,v|
-        data[:salaries][k] = salaries_list.shift
+      data[:salaries].each do |salary|
+        salary["median_pay"] = salaries_list.shift
       end
 
       City.create(data)
