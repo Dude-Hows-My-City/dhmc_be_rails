@@ -59,59 +59,216 @@ class CityFacade
                               "small_apartment" => 0.0
                           }
                         },
-              :salaries => {  "account_manager" => 0.0,
-                              "accountant" => 0.0,
-                              "administrative_assitant" => 0.0,
-                              "architect" => 0.0,
-                              "attorney" => 0.0,
-                              "business_analyst" => 0.0,
-                              "business_development" => 0.0,
-                              "c_level_executive" => 0.0,
-                              "cashier" => 0.0,
-                              "chef" => 0.0,
-                              "chemical_engineer" => 0.0,
-                              "civil_engineer" => 0.0,
-                              "content_marketing" => 0.0,
-                              "copywriter" => 0.0,
-                              "customer_support" => 0.0,
-                              "data_analyst" => 0.0,
-                              "data_scientist" => 0.0,
-                              "dentist" => 0.0,
-                              "electrical_engineer" => 0.0,
-                              "executive_assistant" => 0.0,
-                              "fashion_designer" => 0.0,
-                              "finance_manager" => 0.0,
-                              "financial_analyst" => 0.0,
-                              "graphic_designer" => 0.0,
-                              "hardware_engineer" => 0.0,
-                              "human_resources_manager" => 0.0,
-                              "it_manager" => 0.0,
-                              "industrial_designer" => 0.0,
-                              "interior_designer" => 0.0,
-                              "lecturer" => 0.0,
-                              "marketing_manager" => 0.0,
-                              "mechanical_engineer" => 0.0,
-                              "mobile_developer" => 0.0,
-                              "nurse" => 0.0,
-                              "office_manager" => 0.0,
-                              "operations_manager" => 0.0,
-                              "pharmacist" => 0.0,
-                              "physician" => 0.0,
-                              "postdoctoral_researcher" => 0.0,
-                              "product_manager" => 0.0,
-                              "project_manager" => 0.0,
-                              "qa_engineer" => 0.0,
-                              "receptionist" => 0.0,
-                              "research_scientist" => 0.0,
-                              "sales_manager" => 0.0,
-                              "software_engineer" => 0.0,
-                              "systems_administrator" => 0.0,
-                              "teacher" => 0.0,
-                              "ux_designer" => 0.0,
-                              "waiter" => 0.0,
-                              "web_designer" => 0.0,
-                              "web_developer" => 0.0
-                            }
+              :salaries => [
+                              {
+                                "job_title" => "account_manager",
+                                "median_pay" => 0.0
+                              },
+                              {
+                                "job_title" => "accountant",
+                                "median_pay" => 0.0
+                              },
+                              {
+                                "job_title" => "administrative_assitant",
+                                "median_pay" => 0.0
+                              },
+                              {
+                                "job_title" => "architect",
+                                "median_pay" => 0.0
+                              },
+                              {
+                                "job_title" => "attorney",
+                                "median_pay" => 0.0
+                              },
+                              {
+                                "job_title" => "business_analyst",
+                                "median_pay" => 0.0
+                              },
+                              {
+                                "job_title" => "business_development",
+                                "median_pay" => 0.0
+                              },
+                              {
+                                "job_title" => "c_level_executive",
+                                "median_pay" => 0.0
+                              },
+                              {
+                                "job_title"=> "cashier",
+                                "median_pay" => 0.0
+                              },
+                              {
+                                "job_title" => "chef",
+                                "median_pay" => 0.0
+                              },
+                              {
+                                "job_title" => "chemical_engineer",
+                                "median_pay" => 0.0
+                              },
+                              {
+                                "job_title" => "civil_engineer",
+                                "median_pay" => 0.0
+                              },
+                              {
+                                "job_title" => "content_marketing",
+                                "median_pay" => 0.0
+                              },
+                              {
+                                "job_title" => "copywriter",
+                                "median_pay" => 0.0
+                              },
+                              {
+                                "job_title" => "customer_support",
+                                "median_pay" => 0.0
+                              },
+                              {
+                                "job_title" => "data_analyst",
+                                "median_pay" => 0.0
+                              },
+                              {
+                                "job_title" => "data_scientist",
+                                "median_pay" => 0.0
+                              },
+                              {
+                                "job_title" => "dentist",
+                                "median_pay" => 0.0
+                              },
+                              {
+                                "job_title" => "electrical_engineer",
+                                "median_pay" => 0.0
+                              },
+                              {
+                                "job_title" => "executive_assistant",
+                                "median_pay" => 0.0
+                              },
+                              {
+                                "job_title" => "fashion_designer",
+                                "median_pay" => 0.0
+                              },
+                              {
+                                "job_title" => "finance_manager",
+                                "median_pay" => 0.0
+                              },
+                              {
+                                "job_title" => "financial_analyst",
+                                "median_pay" => 0.0
+                              },
+                              {
+                                "job_title" => "graphic_designer",
+                                "median_pay" => 0.0
+                              },
+                              {
+                                "job_title" => "hardware_engineer",
+                                "median_pay" => 0.0
+                              },
+                              {
+                                "job_title" => "human_resources_manager",
+                                "median_pay" => 0.0
+                              },
+                              {
+                                "job_title" => "it_manager",
+                                "median_pay" => 0.0
+                              },
+                              {
+                                "job_title" => "industrial_designer",
+                                "median_pay" => 0.0
+                              },
+                              {
+                                "job_title" => "interior_designer",
+                                "median_pay" => 0.0
+                              },
+                              {
+                                "job_title" => "lecturer",
+                                "median_pay" => 0.0
+                              },
+                              {
+                                "job_title" => "marketing_manager",
+                                "median_pay" => 0.0
+                              },
+                              {
+                                "job_title" => "mechanical_engineer",
+                                "median_pay" => 0.0
+                              },
+                              {
+                                "job_title" => "mobile_developer",
+                                "median_pay" => 0.0
+                              },
+                              {
+                                "job_title" => "nurse",
+                                "median_pay" => 0.0
+                              },
+                              {
+                                "job_title" => "office_manager",
+                                "median_pay" => 0.0
+                              },
+                              {
+                                "job_title" => "operations_manager",
+                                "median_pay" => 0.0
+                              },
+                              {
+                                "job_title" => "pharmacist",
+                                "median_pay" => 0.0
+                              },
+                              {
+                                "job_title" => "physician",
+                                "median_pay" => 0.0
+                              },
+                              {
+                                "job_title" => "postdoctoral_researcher",
+                                "median_pay" => 0.0
+                              },
+                              {
+                                "job_title" => "product_manager",
+                                "median_pay" => 0.0
+                              },
+                              {
+                                "job_title" => "project_manager",
+                                "median_pay" => 0.0
+                              },
+                              {
+                                "job_title" => "qa_engineer",
+                                "median_pay" => 0.0
+                              },
+                              {
+                                "job_title" => "receptionist",
+                                "median_pay" => 0.0
+                              },
+                              {
+                                "job_title" => "research_scientist",
+                                "median_pay" => 0.0
+                              },
+                              {
+                                "job_title" => "sales_manager",
+                                "median_pay" => 0.0
+                              },
+                              {
+                                "job_title" => "software_engineer",
+                                "median_pay" => 0.0
+                              },
+                              {
+                                "job_title" => "systems_administrator",
+                                "median_pay" => 0.0
+                              },
+                              {
+                                "job_title" => "teacher",
+                                "median_pay" => 0.0
+                              },
+                              {
+                                "job_title" => "ux_designer",
+                                "median_pay" => 0.0
+                              },
+                              {
+                                "job_title" => "waiter",
+                                "median_pay" => 0.0
+                              },
+                              {
+                                "job_title" => "web_designer",
+                                "median_pay" => 0.0
+                              },
+                              {
+                                "job_title" => "web_developer",
+                                "median_pay" => 0.0
+                              }
+                            ]
             }
 ## Get list of city names from which to pull data
     city_names = []
@@ -190,10 +347,10 @@ class CityFacade
         city_salaries.each do |job|
           salaries_list << job[:salary_percentiles][:percentile_50].round(2)
         end
-      data[:salaries].each do |k,v|
-        data[:salaries][k] = salaries_list.shift
+      data[:salaries].each do |salary|
+        salary["median_pay"] = salaries_list.shift
       end
-      
+
       City.create(data)
     end
   end
