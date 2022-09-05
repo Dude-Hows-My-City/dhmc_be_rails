@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe CityFacade do
-  it "creates city objects from multiple endpoints" do
+  xit "creates city objects from multiple endpoints" do
     City.destroy_all
     cities = CityFacade.create_city_objects
 
