@@ -10,6 +10,6 @@ class Api::V1::UsersController < ApplicationController
 
   private
   def user_params
-    JSON.parse(params['_json'], symbolize_names: true)
+    params.permit(:username)
   end
 end
