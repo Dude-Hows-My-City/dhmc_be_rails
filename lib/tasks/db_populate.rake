@@ -1,6 +1,7 @@
 namespace :db_populate do
 
   task :populate_cities => :environment do
+    Favorite.destory_all
     City.destroy_all
     CityFacade.create_city_objects
     table = 'cities'
