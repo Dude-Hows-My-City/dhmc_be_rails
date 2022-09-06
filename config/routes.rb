@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :cities, only: [:index, :show]
       resources :favorites, only: [:create]
-      resources :users, only: [:create]
+      resources :users, only: [:index, :create]
 
       get '/favorites/:id', to: 'favorites#index'
       delete '/favorites', to: 'favorites#destroy'
