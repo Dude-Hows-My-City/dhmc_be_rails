@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe UrbanAreaFacade do
-  it "populates the database from a service call" do
+  it "populates the database from a service call", :vcr do
     data = UrbanAreaFacade.create_list_of_cities
 
     expect(data).to be_all UrbanArea
