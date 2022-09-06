@@ -1,0 +1,77 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://city-microservice.herokuapp.com/api/paris/salaries
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Server:
+      - gunicorn
+      Date:
+      - Tue, 06 Sep 2022 17:34:34 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '10358'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"_links":{"curies":[{"href":"https://developers.teleport.org/api/resources/Location/#!/relations/{rel}/","name":"location","templated":true},{"href":"https://developers.teleport.org/api/resources/City/#!/relations/{rel}/","name":"city","templated":true},{"href":"https://developers.teleport.org/api/resources/UrbanArea/#!/relations/{rel}/","name":"ua","templated":true},{"href":"https://developers.teleport.org/api/resources/Country/#!/relations/{rel}/","name":"country","templated":true},{"href":"https://developers.teleport.org/api/resources/Admin1Division/#!/relations/{rel}/","name":"a1","templated":true},{"href":"https://developers.teleport.org/api/resources/Timezone/#!/relations/{rel}/","name":"tz","templated":true}],"self":{"href":"https://api.teleport.org/api/urban_areas/slug:paris/salaries/"}},"salaries":[{"job":{"id":"ACCOUNT-MANAGER","title":"Account
+        Manager"},"salary_percentiles":{"percentile_25":34953.36368856646,"percentile_50":49302.3227180283,"percentile_75":69541.77706758786}},{"job":{"id":"ACCOUNTANT","title":"Accountant"},"salary_percentiles":{"percentile_25":38347.03171973698,"percentile_50":45541.33586236438,"percentile_75":54085.36669244191}},{"job":{"id":"ADMINISTRATIVE-ASSISTANT","title":"Administrative
+        Assistant"},"salary_percentiles":{"percentile_25":24282.805028428393,"percentile_50":29204.292295663443,"percentile_75":35123.2358655456}},{"job":{"id":"ARCHITECT","title":"Architect"},"salary_percentiles":{"percentile_25":28255.272600722914,"percentile_50":34987.72205196216,"percentile_75":43324.327876208125}},{"job":{"id":"ATTORNEY","title":"Attorney"},"salary_percentiles":{"percentile_25":28316.634985627294,"percentile_50":38239.7882865455,"percentile_75":51640.36648217679}},{"job":{"id":"BUSINESS-ANALYST","title":"Business
+        Analyst"},"salary_percentiles":{"percentile_25":39785.354928950044,"percentile_50":44637.46487323726,"percentile_75":50081.32449409503}},{"job":{"id":"BUSINESS-DEVELOPMENT","title":"Business
+        Development"},"salary_percentiles":{"percentile_25":44813.83501321654,"percentile_50":55674.41822245919,"percentile_75":69167.05172621684}},{"job":{"id":"C-LEVEL-EXECUTIVE","title":"C
+        Level Executive"},"salary_percentiles":{"percentile_25":76782.94049372547,"percentile_50":95982.02012839512,"percentile_75":119981.70594522197}},{"job":{"id":"CASHIER","title":"Cashier"},"salary_percentiles":{"percentile_25":9266.390939665294,"percentile_50":12981.934849040297,"percentile_75":18187.300052636707}},{"job":{"id":"CHEF","title":"Chef"},"salary_percentiles":{"percentile_25":22245.180895234982,"percentile_50":27323.295083101508,"percentile_75":33560.63759221468}},{"job":{"id":"CHEMICAL-ENGINEER","title":"Chemical
+        Engineer"},"salary_percentiles":{"percentile_25":34445.41082923452,"percentile_50":41738.73417256701,"percentile_75":50576.31447524031}},{"job":{"id":"CIVIL-ENGINEER","title":"Civil
+        Engineer"},"salary_percentiles":{"percentile_25":22496.954446328764,"percentile_50":41267.49570412485,"percentile_75":75699.41103596239}},{"job":{"id":"CONTENT-MARKETING","title":"Content
+        Marketing"},"salary_percentiles":{"percentile_25":25465.062542544216,"percentile_50":31883.54456692768,"percentile_75":39919.80826486905}},{"job":{"id":"COPYWRITER","title":"Copywriter"},"salary_percentiles":{"percentile_25":26864.608910794796,"percentile_50":33033.771022875946,"percentile_75":40619.61339602149}},{"job":{"id":"CUSTOMER-SUPPORT","title":"Customer
+        Support"},"salary_percentiles":{"percentile_25":19163.855386128052,"percentile_50":24638.51306688751,"percentile_75":31677.15023494752}},{"job":{"id":"DATA-ANALYST","title":"Data
+        Analyst"},"salary_percentiles":{"percentile_25":32693.966009981537,"percentile_50":39144.30692898734,"percentile_75":46867.264879487506}},{"job":{"id":"DATA-SCIENTIST","title":"Data
+        Scientist"},"salary_percentiles":{"percentile_25":31341.672891469967,"percentile_50":37861.16817106249,"percentile_75":45736.80735681508}},{"job":{"id":"DENTIST","title":"Dentist"},"salary_percentiles":{"percentile_25":14589.791796999823,"percentile_50":19001.035044360735,"percentile_75":24746.02364313843}},{"job":{"id":"ELECTRICAL-ENGINEER","title":"Electrical
+        Engineer"},"salary_percentiles":{"percentile_25":28187.376670012123,"percentile_50":34115.12552951195,"percentile_75":41289.46810195861}},{"job":{"id":"EXECUTIVE-ASSISTANT","title":"Executive
+        Assistant"},"salary_percentiles":{"percentile_25":25566.560029629403,"percentile_50":33495.04638872688,"percentile_75":43882.248189930935}},{"job":{"id":"FASHION-DESIGNER","title":"Fashion
+        Designer"},"salary_percentiles":{"percentile_25":18315.725757880537,"percentile_50":23644.288370412196,"percentile_75":30523.08054474288}},{"job":{"id":"FINANCE-MANAGER","title":"Finance
+        Manager"},"salary_percentiles":{"percentile_25":33425.21313951896,"percentile_50":43772.10378537483,"percentile_75":57321.91031363456}},{"job":{"id":"FINANCIAL-ANALYST","title":"Financial
+        Analyst"},"salary_percentiles":{"percentile_25":34906.95158160883,"percentile_50":42729.990022455524,"percentile_75":52306.258913801044}},{"job":{"id":"GRAPHIC-DESIGNER","title":"Graphic
+        Designer"},"salary_percentiles":{"percentile_25":19344.105775844295,"percentile_50":25201.652572839866,"percentile_75":32832.91043596486}},{"job":{"id":"HARDWARE-ENGINEER","title":"Hardware
+        Engineer"},"salary_percentiles":{"percentile_25":26163.581714882283,"percentile_50":31787.579835777153,"percentile_75":38620.48563638156}},{"job":{"id":"HUMAN-RESOURCES-MANAGER","title":"Human
+        Resources Manager"},"salary_percentiles":{"percentile_25":27874.234351713447,"percentile_50":38272.862436951735,"percentile_75":52550.75280759374}},{"job":{"id":"IT-MANAGER","title":"IT
+        Manager"},"salary_percentiles":{"percentile_25":43412.97416173515,"percentile_50":52480.177460161045,"percentile_75":63441.15047242171}},{"job":{"id":"INDUSTRIAL-DESIGNER","title":"Industrial
+        Designer"},"salary_percentiles":{"percentile_25":24885.053711090903,"percentile_50":30569.864758719137,"percentile_75":37553.32989094084}},{"job":{"id":"INTERIOR-DESIGNER","title":"Interior
+        Designer"},"salary_percentiles":{"percentile_25":31565.885337512096,"percentile_50":38088.24881095731,"percentile_75":45958.30853384614}},{"job":{"id":"LECTURER","title":"Lecturer"},"salary_percentiles":{"percentile_25":41973.27701564517,"percentile_50":51721.50799721019,"percentile_75":63733.75108425181}},{"job":{"id":"MARKETING-MANAGER","title":"Marketing
+        Manager"},"salary_percentiles":{"percentile_25":35393.339929988426,"percentile_50":45201.162930577484,"percentile_75":57726.82471668845}},{"job":{"id":"MECHANICAL-ENGINEER","title":"Mechanical
+        Engineer"},"salary_percentiles":{"percentile_25":27443.2072945829,"percentile_50":35993.62163548622,"percentile_75":47208.06808518596}},{"job":{"id":"MOBILE-DEVELOPER","title":"Mobile
+        Developer"},"salary_percentiles":{"percentile_25":32969.21952345004,"percentile_50":41234.00662988627,"percentile_75":51570.62640030566}},{"job":{"id":"NURSE","title":"Nurse"},"salary_percentiles":{"percentile_25":19100.122539985357,"percentile_50":21248.375616784993,"percentile_75":23638.24972362346}},{"job":{"id":"OFFICE-MANAGER","title":"Office
+        Manager"},"salary_percentiles":{"percentile_25":27476.73883345355,"percentile_50":33592.43731773103,"percentile_75":41069.35148984176}},{"job":{"id":"OPERATIONS-MANAGER","title":"Operations
+        Manager"},"salary_percentiles":{"percentile_25":28025.89153611134,"percentile_50":39922.716227361925,"percentile_75":56869.6724211905}},{"job":{"id":"PHARMACIST","title":"Pharmacist"},"salary_percentiles":{"percentile_25":28724.207065381222,"percentile_50":31999.1427263219,"percentile_75":35647.463927858655}},{"job":{"id":"PHYSICIAN","title":"Physician"},"salary_percentiles":{"percentile_25":43545.84813354382,"percentile_50":59329.12401877639,"percentile_75":80833.07841520486}},{"job":{"id":"POSTDOCTORAL-RESEARCHER","title":"Postdoctoral
+        Researcher"},"salary_percentiles":{"percentile_25":32072.011292427695,"percentile_50":36665.950295590475,"percentile_75":41917.917115354925}},{"job":{"id":"PRODUCT-MANAGER","title":"Product
+        Manager"},"salary_percentiles":{"percentile_25":36718.8597661718,"percentile_50":46401.84317930099,"percentile_75":58638.28735826021}},{"job":{"id":"PROJECT-MANAGER","title":"Project
+        Manager"},"salary_percentiles":{"percentile_25":39429.97399865334,"percentile_50":47287.150662579435,"percentile_75":56710.02009440472}},{"job":{"id":"QA-ENGINEER","title":"QA
+        Engineer"},"salary_percentiles":{"percentile_25":32846.654691726195,"percentile_50":40491.252274582504,"percentile_75":49915.0225845334}},{"job":{"id":"RECEPTIONIST","title":"Receptionist"},"salary_percentiles":{"percentile_25":21799.77365623384,"percentile_50":26403.431195785648,"percentile_75":31979.285193689753}},{"job":{"id":"RESEARCH-SCIENTIST","title":"Research
+        Scientist"},"salary_percentiles":{"percentile_25":29602.574647165544,"percentile_50":39295.83147477668,"percentile_75":52163.110462484845}},{"job":{"id":"SALES-MANAGER","title":"Sales
+        Manager"},"salary_percentiles":{"percentile_25":28404.778347654927,"percentile_50":34394.33720046785,"percentile_75":41646.88127401465}},{"job":{"id":"SOFTWARE-ENGINEER","title":"Software
+        Engineer"},"salary_percentiles":{"percentile_25":33919.47177443529,"percentile_50":39152.87488374299,"percentile_75":45193.734792102434}},{"job":{"id":"SYSTEMS-ADMINISTRATOR","title":"Systems
+        Administrator"},"salary_percentiles":{"percentile_25":34268.90898119382,"percentile_50":41243.198517555655,"percentile_75":49636.87127862707}},{"job":{"id":"TEACHER","title":"Teacher"},"salary_percentiles":{"percentile_25":17261.297905880856,"percentile_50":21348.74041781595,"percentile_75":26404.08154198009}},{"job":{"id":"UX-DESIGNER","title":"UX
+        Designer"},"salary_percentiles":{"percentile_25":27414.683046909377,"percentile_50":33614.59183273228,"percentile_75":41216.62767896114}},{"job":{"id":"WAITER","title":"Waiter"},"salary_percentiles":{"percentile_25":23051.281174819465,"percentile_50":35283.40720289323,"percentile_75":54006.49163071639}},{"job":{"id":"WEB-DESIGNER","title":"Web
+        Designer"},"salary_percentiles":{"percentile_25":21050.157175919387,"percentile_50":25757.498744518052,"percentile_75":31517.519609440744}},{"job":{"id":"WEB-DEVELOPER","title":"Web
+        Developer"},"salary_percentiles":{"percentile_25":29325.050313149583,"percentile_50":38324.71412190231,"percentile_75":50086.315175627315}}]}
+
+'
+  recorded_at: Tue, 06 Sep 2022 17:34:34 GMT
+recorded_with: VCR 6.1.0
