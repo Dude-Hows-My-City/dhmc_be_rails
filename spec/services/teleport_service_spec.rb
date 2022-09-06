@@ -6,7 +6,7 @@ RSpec.describe TeleportService do
     expect(conn.class).to eq(Faraday::Connection)
   end
 
-  it "sends response data, all urban areas" do
+  it "sends response data, all urban areas", :vcr do
     response = TeleportService.get_all_urban_areas
 
     expect(response).to be_a Hash
@@ -16,7 +16,7 @@ RSpec.describe TeleportService do
     expect(response[:_links][:"ua:item"][0]).to have_key :name
   end
 
-  it "sends response data, city basic stats" do
+  it "sends response data, city basic stats", :vcr do
     response = TeleportService.get_city_data("paris")
 
     expect(response).to be_a Hash
@@ -24,7 +24,7 @@ RSpec.describe TeleportService do
     expect(response).to have_key :full_name
   end
 
-  it "sends response data, city scores" do
+  it "sends response data, city scores", :vcr do
     response = TeleportService.get_city_score_data("paris")
 
     expect(response).to be_a Hash
@@ -34,7 +34,7 @@ RSpec.describe TeleportService do
     expect(response).to have_key :teleport_city_score
   end
 
-  it "sends response data, city details" do
+  it "sends response data, city details", :vcr do
     response = TeleportService.get_city_details_data("paris")
 
     expect(response).to be_a Hash
@@ -42,7 +42,7 @@ RSpec.describe TeleportService do
     expect(response[:categories]).to be_a Array
   end
 
-  it "sends response data, city images" do
+  it "sends response data, city images", :vcr do
     response = TeleportService.get_city_image_data("paris")
 
     expect(response).to be_a Hash
@@ -54,7 +54,7 @@ RSpec.describe TeleportService do
     expect(response[:photos][0][:image].keys).to eq([:mobile, :web])
   end
 
-  it "sends response data, city salaries" do
+  it "sends response data, city salaries", :vcr do
     response = TeleportService.get_city_salary_data("paris")
 
     expect(response).to be_a Hash
