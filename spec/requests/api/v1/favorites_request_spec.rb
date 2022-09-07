@@ -12,7 +12,7 @@ RSpec.describe 'Favorites Request Endpoint' do
 
         headers = {"CONTENT_TYPE" => "application/json"}
         post '/api/v1/favorites', headers: headers, params: JSON.generate(favorite: favorites_params)
-        
+
         expect(response).to  be_successful
         expect(response).to  have_http_status(204)
         

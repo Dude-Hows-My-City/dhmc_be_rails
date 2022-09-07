@@ -2,6 +2,12 @@
 
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/Dude-Hows-My-City/dhmc_be_rails/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/Dude-Hows-My-City/dhmc_be_rails/tree/main) 
 
+# About This Project
+**[View the Live Site](http://dude-hows-my-city.herokuapp.com/)**
+
+"**Dude How's My City?**" is a fullstack service-oriented application that provides users with the capability of searching and comparing cities they might be interested in with economic, social, and cultural data.
+
+---
 
 # API Usage
 - Base URL: 'https://dashboard.heroku.com/apps/dude-hows-my-city-be'
@@ -347,11 +353,6 @@ Response:
 ``` ruby
 [POST] /api/v1/favorites
 
-Required PARAMS:
-  - favorites_params = ({
-                          user_id: user.id,
-                          city_id: city.id
-                        })
 ```
 
 Example:
@@ -359,14 +360,11 @@ Example:
 ``` ruby
 [POST] /api/v1/favorites
 
-- PARAMS
-  - JSON.generate(favorite: favorites_params)        
-```
-
-Response: 
-
-```json
-
+- BODY
+  - {
+    "user_id" : 3,
+    "city_id" : 1
+    }      
 ```
 
 ---
@@ -383,14 +381,138 @@ Response:
 Example:
 
 ``` ruby
-[GET] /api/v1/favorites/33
+[GET] /api/v1/favorites/3
         
 ```
 
 Response: 
 
 ```json
-
+{
+    "data": [
+        {
+            "id": "1",
+            "type": "city",
+            "attributes": {
+                "name": "Aarhus",
+                "full_name": "Aarhus, Denmark",
+                "summary": {
+                    "continent": "Europe",
+                    "summary": "<p>Aarhus, Denmark, is among the top cities with a <b>free business environment</b>.\n\n    \n        According to our city rankings, this is a good place to live with high ratings in <b>safety</b>, <b>healthcare</b> and <b>environmental quality</b>.\n    \n\n    \n</p>\n\n"
+                },
+                "scores": {
+                    "housing": 6.13,
+                    "cost_of_living": 4.02,
+                    "startups": 2.83,
+                    "venture_capital": 2.51,
+                    "travel_connectivity": 3.54,
+                    "commute": 6.31,
+                    "business_freedom": 9.94,
+                    "safety": 9.62,
+                    "health_care": 9.13,
+                    "education": 5.37,
+                    "environmental_quality": 7.63,
+                    "economy": 4.89,
+                    "taxation": 5.07,
+                    "internet_access": 8.37,
+                    "leisure_and_culture": 3.19,
+                    "tolerance": 9.74,
+                    "outdoors": 4.13,
+                    "teleport_city_score": 65.09
+                },
+                "details": {
+                    "image_photographer": "Calvin Smith",
+                    "image_web_url": "https://d13k13wj6adfdf.cloudfront.net/urban_areas/aarhus_web-1462c370b8.jpg",
+                    "image_mobile_url": "https://d13k13wj6adfdf.cloudfront.net/urban_areas/aarhus-67c2f42848.jpg",
+                    "population_size_in_millions": 0.2502,
+                    "average_costs": {
+                        "consumer_price_index": 0.4015,
+                        "apples_per_kg": 2.9,
+                        "bread": 0.87,
+                        "cappuccino": 5.6,
+                        "cinema": 17.0,
+                        "fitness_club": 37.0,
+                        "import_beer": 1.7,
+                        "public_transport": 62.0,
+                        "lunch_meal": 15.0,
+                        "taxi": 13.0,
+                        "restaurant_price_index": 97.32
+                    },
+                    "culture": {
+                        "art_galleries": 51,
+                        "movie_theaters": 17,
+                        "comedy_clubs": 12,
+                        "concert_venues": 95,
+                        "historical_sites": 13,
+                        "museums": 18,
+                        "performing_arts_venues": 56,
+                        "sports_venues": 21,
+                        "zoos": 2
+                    },
+                    "housing": {
+                        "large_apartment": 1700.0,
+                        "medium_apartment": 1300.0,
+                        "small_apartment": 840.0
+                    }
+                },
+                "salaries": {
+                    "account_manager": 54368.0,
+                    "accountant": 73755.52,
+                    "administrative_assitant": 62762.85,
+                    "architect": 97607.28,
+                    "attorney": 63642.41,
+                    "business_analyst": 61267.29,
+                    "business_development": 78989.63,
+                    "c_level_executive": 57751.15,
+                    "cashier": 63075.57,
+                    "chef": 44090.01,
+                    "chemical_engineer": 83469.07,
+                    "civil_engineer": 68784.19,
+                    "content_marketing": 36104.05,
+                    "copywriter": 49774.12,
+                    "customer_support": 33975.33,
+                    "data_analyst": 60259.69,
+                    "data_scientist": 63227.33,
+                    "dentist": 118741.64,
+                    "electrical_engineer": 55313.12,
+                    "executive_assistant": 36619.27,
+                    "fashion_designer": 93932.37,
+                    "finance_manager": 76056.34,
+                    "financial_analyst": 106273.34,
+                    "graphic_designer": 44147.55,
+                    "hardware_engineer": 71176.5,
+                    "human_resources_manager": 43270.64,
+                    "it_manager": 81535.4,
+                    "industrial_designer": 62463.39,
+                    "interior_designer": 40602.38,
+                    "lecturer": 40754.84,
+                    "marketing_manager": 46747.17,
+                    "mechanical_engineer": 56796.36,
+                    "mobile_developer": 93582.69,
+                    "nurse": 44119.07,
+                    "office_manager": 69290.74,
+                    "operations_manager": 42087.59,
+                    "pharmacist": 71880.44,
+                    "physician": 54539.76,
+                    "postdoctoral_researcher": 59455.12,
+                    "product_manager": 68398.62,
+                    "project_manager": 64373.85,
+                    "qa_engineer": 47092.75,
+                    "receptionist": 112167.87,
+                    "research_scientist": 57721.08,
+                    "sales_manager": 48356.07,
+                    "software_engineer": 59061.69,
+                    "systems_administrator": 45060.78,
+                    "teacher": 34667.72,
+                    "ux_designer": 56659.25,
+                    "waiter": 20431.28,
+                    "web_designer": 47304.94,
+                    "web_developer": 42867.45
+                }
+            }
+        }
+    ]
+}
 ```
 
 ---
@@ -402,8 +524,6 @@ Response:
 ``` ruby
 [DELETE] /api/v1/favorites
 
-Required PARAMS:
-  - { user_id: user.id, city_id: city_3.id}
 ```
 
 Example:
@@ -411,18 +531,54 @@ Example:
 ``` ruby
 [DELETE] /api/v1/favorites
 
-- PARAMS
-  - { user_id: 13, city_id: 57}        
+- BODY
+  - {
+    "user_id" : 3,
+    "city_id" : 1
+    }       
 ```
 
-Response: 
-
-```json
-
-```
 ---
 
-Summary of the project, backend resources and technologies, link to Turing project expectations
-List all endpoints and show example json bodies
-Link all repos and hosted apps
-List contributors with Linkdin and Github
+# Tech Stack
+
+### Languages
+
+![Rails](https://img.shields.io/badge/rails-%23CC0000.svg?style=for-the-badge&logo=ruby-on-rails&logoColor=white)
+
+![Ruby](https://img.shields.io/badge/ruby-%23CC342D.svg?style=for-the-badge&logo=ruby&logoColor=white)
+
+### Tools
+<p>
+  <img src="https://img.shields.io/badge/git-F05032.svg?&style=for-the-badge&logo=git&logoColor=white" />
+   <img alt="GitHub" src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white"/>
+  <img alt="Heroku" src="https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white"/> 
+</p>
+
+### Processes
+<p>
+  <img src="https://img.shields.io/badge/OOP-b81818.svg?&style=for-the-badge&logo=OOP&logoColor=white" />
+  <img src="https://img.shields.io/badge/TDD-b87818.svg?&style=for-the-badge&logo=TDD&logoColor=white" />
+  <img src="https://img.shields.io/badge/MVC-b8b018.svg?&style=for-the-badge&logo=MVC&logoColor=white" />
+  <img src="https://img.shields.io/badge/REST-33b818.svg?&style=for-the-badge&logo=REST&logoColor=white" />  
+</p>
+
+
+---
+
+# Contributors
+
+[Dude, How's My City? Front-end Repo](https://github.com/Dude-Hows-My-City/dhmc_FE)
+
+- Co-Author: [Brandon Ainsworth](https://github.com/BrandonAinsworth)
+- Co-Author: [Kendall McGree](https://github.com/kendallm360)
+- Co-Author: [Nick Orlov](https://github.com/orlov-n)
+
+[Dude, How's My City? Back-end Repo](https://github.com/Dude-Hows-My-City/dhmc_be_rails)
+
+- Co-Author: [Zachary Prince](https://github.com/z-prince)
+- Co-Author: [Antonio Salmeron](https://github.com/amsalmeron)
+- Co-Author: [Zac Hazelwood](https://github.com/ZacHazelwood)
+- Co-Author: [Stephen Wilkens](https://github.com/StephenWilkens)
+
+---
