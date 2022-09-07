@@ -2,6 +2,12 @@
 
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/Dude-Hows-My-City/dhmc_be_rails/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/Dude-Hows-My-City/dhmc_be_rails/tree/main) 
 
+# About This Project
+**[View the Live Site](http://dude-hows-my-city.herokuapp.com/)**
+
+"**Dude How's My City?**" is a fullstack service-oriented application that provides users with the capability of searching and comparing cities they might be interested in with economic, social, and cultural data.
+
+---
 
 # API Usage
 - Base URL: 'https://dashboard.heroku.com/apps/dude-hows-my-city-be'
@@ -534,7 +540,45 @@ Example:
 
 ---
 
-Summary of the project, backend resources and technologies, link to Turing project expectations
-List all endpoints and show example json bodies
-Link all repos and hosted apps
-List contributors with Linkdin and Github
+# Tech Stack
+
+### Languages
+
+![Rails](https://img.shields.io/badge/rails-%23CC0000.svg?style=for-the-badge&logo=ruby-on-rails&logoColor=white)
+
+![Ruby](https://img.shields.io/badge/ruby-%23CC342D.svg?style=for-the-badge&logo=ruby&logoColor=white)
+
+### Tools
+<p>
+  <img src="https://img.shields.io/badge/git-F05032.svg?&style=for-the-badge&logo=git&logoColor=white" />
+   <img alt="GitHub" src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white"/>
+  <img alt="Heroku" src="https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white"/> 
+</p>
+
+### Processes
+<p>
+  <img src="https://img.shields.io/badge/OOP-b81818.svg?&style=for-the-badge&logo=OOP&logoColor=white" />
+  <img src="https://img.shields.io/badge/TDD-b87818.svg?&style=for-the-badge&logo=TDD&logoColor=white" />
+  <img src="https://img.shields.io/badge/MVC-b8b018.svg?&style=for-the-badge&logo=MVC&logoColor=white" />
+  <img src="https://img.shields.io/badge/REST-33b818.svg?&style=for-the-badge&logo=REST&logoColor=white" />  
+</p>
+
+
+---
+
+# Contributors
+
+[Dude, How's My City? Front-end Repo](https://github.com/Dude-Hows-My-City/dhmc_FE)
+
+- Co-Author: [Brandon Ainsworth](https://github.com/BrandonAinsworth)
+- Co-Author: [Kendall McGree](https://github.com/kendallm360)
+- Co-Author: [Nick Orlov](https://github.com/orlov-n)
+
+[Dude, How's My City? Back-end Repo](https://github.com/Dude-Hows-My-City/dhmc_be_rails)
+
+- Co-Author: [Zachary Prince](https://github.com/z-prince)
+- Co-Author: [Antonio Salmeron](https://github.com/amsalmeron)
+- Co-Author: [Zac Hazelwood](https://github.com/ZacHazelwood)
+- Co-Author: [Stephen Wilkens](https://github.com/StephenWilkens)
+
+---
